@@ -12,6 +12,9 @@ app.get('/api/quote', async (req, res) => {
   try {
     const response = await axios.get('https://favqs.com/api/qotd');
     res.json(response.data);
+    if (res){
+        console.log(res)
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error fetching quote' });
