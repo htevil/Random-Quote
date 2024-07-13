@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+  
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+  
+body {
+    height: 100vh; /* Full viewport height */
+    background-color: #111729;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Outfit", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    margin: 0px 20px 0px 20px;
+}
+
+.container{
+    width: 100%;
+    max-width: 560px;
+    min-height: 200px;
+    padding: 32px;
+    padding-bottom: 40px;
+    margin-top: 240px;
+    background-color: #20293A;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22544%22%20height%3D%22209%22%20viewBox%3D%220%200%20544%20209%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask%20id%3D%22mask0_773_2153%22%20style%3D%22mask-type%3Aalpha%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22544%22%20height%3D%22209%22%3E%3Cpath%20d%3D%22M0%2012C0%205.37258%205.37258%200%2012%200H532C538.627%200%20544%205.37258%20544%2012V197C544%20203.627%20538.627%20209%20532%20209H12C5.37259%20209%200%20203.627%200%20197V12Z%22%20fill%3D%22%2320293A%22%2F%3E%3C%2Fmask%3E%3Cg%20mask%3D%22url(%23mask0_773_2153)%22%3E%3Cpath%20d%3D%22M543.603%200C547.294%2044.1038%20490.657%20130.404%20374.841%20159.328C310.011%20175.519%20216.218%20167.546%20148.975%20174.747C67.8162%20183.438%2017.4337%20206.871%200%20225.287%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M549.37%208.56604C553.061%2052.6698%20496.424%20138.97%20380.608%20167.894C315.778%20184.085%20221.985%20176.112%20154.742%20183.313C73.583%20192.004%2023.2005%20215.437%205.76685%20233.853%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M555.136%2017.1321C558.828%2061.2358%20502.191%20147.536%20386.375%20176.46C321.545%20192.651%20227.751%20184.678%20160.509%20191.879C79.3498%20200.57%2028.9672%20224.003%2011.5336%20242.419%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M560.903%2025.6981C564.594%2069.8019%20507.958%20156.102%20392.141%20185.026C327.312%20201.217%20233.518%20193.244%20166.276%20200.445C85.1166%20209.136%2034.7341%20232.569%2017.3004%20250.985%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M566.67%2034.2642C570.361%2078.3679%20513.724%20164.668%20397.908%20193.592C333.079%20209.783%20239.285%20201.811%20172.042%20209.011C90.8833%20217.702%2040.5008%20241.135%2023.0671%20259.551%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M572.437%2042.8302C576.128%2086.9339%20519.491%20173.234%20403.675%20202.158C338.845%20218.349%20245.052%20210.377%20177.809%20217.577C96.6501%20226.268%2046.2675%20249.701%2028.8339%20268.117%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M578.204%2051.3962C581.895%2095.5%20525.258%20181.8%20409.442%20210.725C344.612%20226.915%20250.818%20218.943%20183.576%20226.143C102.417%20234.834%2052.0344%20258.267%2034.6007%20276.683%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M583.97%2059.9623C587.662%20104.066%20531.025%20190.366%20415.209%20219.291C350.379%20235.481%20256.585%20227.509%20189.343%20234.709C108.184%20243.401%2057.8012%20266.833%2040.3676%20285.249%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M589.737%2068.5283C593.428%20112.632%20536.792%20198.932%20420.975%20227.857C356.146%20244.047%20262.352%20236.075%20195.11%20243.275C113.95%20251.967%2063.568%20275.399%2046.1343%20293.815%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M595.504%2077.0943C599.195%20121.198%20542.558%20207.498%20426.742%20236.423C361.913%20252.613%20268.119%20244.641%20200.876%20251.841C119.717%20260.533%2069.3348%20283.965%2051.9011%20302.381%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M602.232%2085.6604C605.923%20129.764%20549.286%20216.064%20433.47%20244.989C368.64%20261.18%20274.847%20253.207%20207.604%20260.408C126.445%20269.099%2076.0626%20292.531%2058.6289%20310.947%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3Cpath%20d%3D%22M608.96%2094.2264C612.651%20138.33%20556.014%20224.63%20440.198%20253.555C375.368%20269.746%20281.575%20261.773%20214.332%20268.974C133.173%20277.665%2082.7906%20301.097%2065.3569%20319.513%22%20stroke%3D%22%23364153%22%20stroke-opacity%3D%220.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: cover;
+    
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.writer{
+    font-size: 16px;
+    font-weight: 200px;
+    color: #E5E7EB;
+    margin-bottom: 12px;
+}
+
+.tags{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tags span{
+    font-size: 10px;
+    font-weight: 500;
+    color: #6466E9;
+    border: solid 1px #6466E9;
+    border-radius: 20px;
+    padding: 4px;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content p{
+    font-size: 24px;
+    font-weight: 400;
+    color: #97A3B6;
+    text-align: center;
+}
+
+.content img{
+    width: 60px;
+    height: 50px;
+}
+
+.button{
+    margin-top: 15px;
+    display: flex;
+    gap: 0;
+}
+
+button{
+    background-color: #111729;
+    border: solid 2px #20293A;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 5px;
+}
+
+#next-btn{
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-right: solid 1px #20293A;
+}
+
+#copy-btn{
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-left: solid 1px #20293A;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    font-size: 14px;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+  }
+
+@media screen and (max-width: 450px) {
+
+    body{
+        height: 110vh;
+    }
+
+    .container{
+        margin-top: 130px;
+    }    
+}
