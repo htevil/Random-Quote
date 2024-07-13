@@ -17,8 +17,9 @@ app.get('/', (req, res) => {
 // Route handler for fetching quotes (replace with your chosen quote API)
 app.get('/api/quote', async (req, res) => {
   try {
-    // Replace with your chosen API endpoint and any required parameters
-    const response = await axios.get('https://favqs.com/api/qotd'); // Placeholder
+    const response = await axios.get('https://favqs.com/api/qotd');
+    console.log(response.config.url); // Log the requested URL
+    console.log(response.status); // Log the response status code
     res.json(response.data);
   } catch (error) {
     console.error(error);
