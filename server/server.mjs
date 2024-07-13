@@ -1,41 +1,11 @@
-import fetch from 'node-fetch';
 import express from 'express';
-import cors from 'cors';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Use CORS middleware
-app.use(cors());
-
-// Get the directory name in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Serve static files from the directory containing index.js
-app.use(express.static(__dirname));
-
-// Define the root route to serve the index.html file
+// Define the root route to print "Hello, World!"
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.get('/api/quote', async (req, res) => {
-    try {
-        const response = await fetch('https://favqs.com/api/qotd');
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        console.error('Error fetching quote:', error);
-        res.status(500).json({ error: 'Failed to fetch quote' });
-    }
-});
-
-// Catch-all route to handle non-existent routes
-app.get('*', (req, res) => {
-    res.status(404).send('Route not found');
+    res.send('Hello, World!');
 });
 
 app.listen(PORT, () => {
