@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,8 +10,12 @@ const PORT = process.env.PORT || 3000;
 // Use CORS middleware
 app.use(cors());
 
-// Serve static files from the public directory
-app.use(express.static('public'));
+// Get the directory name in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from the directory containing index.js
+app.use(express.static(__dirname));
 
 // Define the root route to serve the index.html file
 app.get('/', (req, res) => {
