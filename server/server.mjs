@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Use CORS middleware
 app.use(cors());
@@ -16,8 +16,14 @@ app.get('/api/quote', async (req, res) => {
         const data = await response.json();
         res.json(data);
     } catch (error) {
+        console.error('Error fetching quote:', error);
         res.status(500).json({ error: 'Failed to fetch quote' });
     }
+});
+
+// Catch-all route to handle non-existent routes
+app.get('*', (req, res) => {
+    res.status(404).send('Route not found');
 });
 
 app.listen(PORT, () => {
