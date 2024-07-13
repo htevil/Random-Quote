@@ -1,25 +1,23 @@
-import fetch from 'node-fetch';
 import express from 'express';
+import axios from 'axios';
 import cors from 'cors';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// Use CORS middleware
+// Enable CORS for all origins (adjust as needed for production)
 app.use(cors());
 
-// Define a route to fetch data from the API and return it
 app.get('/api/quote', async (req, res) => {
-    try {
-        const response = await fetch('https://favqs.com/api/qotd');
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        console.error('Error fetching quote:', error);
-        res.status(500).json({ error: 'Failed to fetch quote' });
-    }
+  try {
+    const response = await axios.get('https://favqs.com/api/qotd');
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching quote' });
+  }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });

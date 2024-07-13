@@ -88,6 +88,7 @@ body {
     margin-top: 15px;
     display: flex;
     gap: 0;
+    cursor: pointer;
 }
 
 button{
@@ -97,18 +98,21 @@ button{
     padding-left: 12px;
     padding-right: 12px;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
 #next-btn{
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     border-right: solid 1px #20293A;
+    cursor: pointer;
 }
 
 #copy-btn{
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     border-left: solid 1px #20293A;
+    cursor: pointer;
 }
 
 .custom-alert {
