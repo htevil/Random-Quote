@@ -1,38 +1,26 @@
+import fetch from 'node-fetch';
 import express from 'express';
-import cors from 'cors'; // Import cors for CORS handling
-import axios from 'axios';
-
+import cors from 'cors';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// Enable CORS for all origins during development (adjust as needed)
+// Use CORS middleware
 app.use(cors());
 
-// Route handler for the root path (`/`)
-app.get('/', (req, res) => {
-  res.send('Hello from the server!');
-});
-
-// Route handler for fetching quotes (replace with your chosen quote API)
+// Define a route to fetch data from the API and return it
 app.get('/api/quote', async (req, res) => {
-  try {
-    const response = await axios.get('https://favqs.com/api/qotd');
-    console.log(response.config.url); // Log the requested URL
-    console.log(response.status); // Log the response status code
-    res.json(response.data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error fetching quote' });
-  }
+    try {
+        const response = await fetch('https://favqs.com/api/qotd');
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ error: 'Failed to fetch quote' });
+    }
 });
 
-// Error handling middleware (optional)
-app.use((err, req, res, next) => {
-  console.error(err.stack); // Log the error for debugging
-  res.status(500).json({ message: 'Internal server error' });
-});
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+// Start the server and listen on the specified port
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
