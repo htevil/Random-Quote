@@ -1,6 +1,6 @@
 async function fetchQuote() {
     try{
-      const response = await fetch('http://localhost:3001/api/quote');
+      const response = await fetch('https://random-quote-75ts.onrender.com/api/Quote');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
